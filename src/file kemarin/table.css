@@ -1,0 +1,30 @@
+/* table,th,td {
+    border: 1px solid black;
+    padding: 5px;
+}
+
+table{
+    width: 100%;
+}
+
+.daftar{
+    margin-left: 50px;
+    margin-right: 50px;
+}
+
+h1{
+    text-align: center;
+}
+
+.edit{
+   background-color: green; 
+   border-radius: 6px;
+   width: 60px;
+   color: white;
+}
+.delete{
+    background-color: red;
+    border-radius: 6px;
+    width: 60px;
+    color: white;
+} */

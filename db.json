@@ -1,0 +1,46 @@
+{
+  "daftarBuku": [
+    {
+      "judul": "Keong mas",
+      "deskripsi": "Cerita Rakyat Keong mas yg melegenda",
+      "pengarang": "Ikranegara, Tira",
+      "tahunTerbit": "2022-12-06",
+      "id": 2
+    },
+    {
+      "judul": "Harry Potter",
+      "deskripsi": "Harry Potter yg mengisahkan sekolah sihir",
+      "pengarang": "J.K Rowling",
+      "tahunTerbit": "2022-12-09",
+      "id": 3
+    },
+    {
+      "judul": "Si kancil",
+      "deskripsi": "Si kancil ini mencuri timun",
+      "pengarang": "Yudhistira Ikranegara",
+      "tahunTerbit": "2022-12-08",
+      "id": 4
+    },
+    {
+      "judul": "Aldara",
+      "deskripsi": "seseorang yg menikah muda",
+      "pengarang": "tidak diketahui",
+      "tahunTerbit": "2022-09-24",
+      "id": 5
+    },
+    {
+      "judul": "the doll",
+      "deskripsi": "boneka pembunuh",
+      "pengarang": "tidak diketahuii",
+      "tahunTerbit": "2022-12-02",
+      "id": 6
+    },
+    {
+      "judul": "tentang dia",
+      "deskripsi": "si dia",
+      "pengarang": "saya",
+      "tahunTerbit": "2022-12-02",
+      "id": 7
+    }
+  ]
+}
