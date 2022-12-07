@@ -1,4 +1,11 @@
 {
+  "users": [
+    {
+      "id": 1,
+      "username": "nisa",
+      "password": "666"
+    }
+  ],
   "daftarBuku": [
     {
       "judul": "Keong mas",
@@ -34,13 +41,6 @@
       "pengarang": "tidak diketahuii",
       "tahunTerbit": "2022-12-02",
       "id": 6
-    },
-    {
-      "judul": "tentang dia",
-      "deskripsi": "si dia",
-      "pengarang": "saya",
-      "tahunTerbit": "2022-12-02",
-      "id": 7
     }
   ]
 }

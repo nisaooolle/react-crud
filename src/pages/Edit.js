@@ -2,18 +2,21 @@ import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { Form, InputGroup } from "react-bootstrap";
 import { useHistory, useParams } from "react-router-dom";
-import "../style/edit.css"
+import "../style/edit.css";
+import Swal from "sweetalert2";
 
 const Edit = () => {
-  const param = useParams();
-  const [judul, setJudul] = useState("");
+  //method edit
+  const param = useParams(); //mengembalikan objek
+  const [judul, setJudul] = useState(""); //useState berfungsi untuk menyimpan data sementara
   const [deskripsi, setDeskripsi] = useState("");
   const [pengarang, setPengarang] = useState("");
   const [tahunTerbit, setTahunterbit] = useState("");
 
-  const history = useHistory();
+  const history = useHistory(); // akses ke instance riwayat yang dapat digunakan untuk bernavigasi.
 
   useEffect(() => {
+    //mengambil data, memperbarui DOM secara langsung,
     axios
       .get("http://localhost:8000/daftarBuku/" + param.id)
       .then((response) => {
@@ -29,23 +32,40 @@ const Edit = () => {
   }, []);
 
   const submitActionHandler = async (event) => {
-    event.preventDefault();
+    //untuk mengeksekusi setiap kali event dipicu.
+    event.preventDefault(); //tindakan default yang termasuk dalam acara tersebut tidak akan terjadi.
 
-    await axios
-    .put("http://localhost:8000/daftarBuku/" + param.id, {
-      judul: judul,
-      deskripsi: deskripsi,
-      pengarang: pengarang,
-      tahunTerbit: tahunTerbit
+    //axios put untuk mengedit data
+    await Swal.fire({
+      title: "Anda yakin ingin mengedit?",
+      text: "yakinn ingin mengedit!",
+      icon: "warning",
+      showCancelButton: true,
+      confirmButtonColor: "#3085d6",
+      cancelButtonColor: "#d33",
+      confirmButtonText: "Yes,!",
     })
-    .then(() => {
-        alert("berhasil mengubah data user ygy");
-        history.push("/");
-        window.location.reload();
-    })
-    .catch((error) => {
-        alert("Terjadi kesalahan :" + error)
-    })
+      .then((result) => {
+        if (result.isConfirmed) {
+          axios.put("http://localhost:8000/daftarBuku/" + param.id, {
+            judul: judul,
+            deskripsi: deskripsi,
+            pengarang: pengarang,
+            tahunTerbit: tahunTerbit,
+          });
+          Swal.fire("Edit!", "Berhasil mengedit", "success");
+        }
+      })
+      .then(() => {
+        history.push("/"); //untuk mengepush ulang data setelah diedit
+        setTimeout(() => {
+          window.location.reload();
+        }, 1000);
+        // window.location.reload();
+      })
+      .catch((error) => {
+        alert("Terjadi kesalahan :" + error);
+      });
   };
   return (
     <div className="edit mx-5">
